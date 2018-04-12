@@ -1,7 +1,8 @@
 package sample;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -12,42 +13,58 @@ public class VideoPlayer {
     private MediaView mediaView;
     private String fileName;
     private String url;
+    private BorderPane borderPane;
 
-    // TODO: remove this
     // Example media player
-    public VideoPlayer(StackPane root, Scene scene) {
-
-        player = new MediaPlayer( new Media(getClass().getResource("RickAstley.mp4").toExternalForm()));
-        mediaView = new MediaView(player);
-
-        root.getChildren().add(mediaView);
-
-        VideoControl controls = new VideoControl(player, mediaView);
-        scene.setRoot(controls);
-
-        player.play();
-
+    public VideoPlayer(Scene scene) {
+        this(scene, "RickAstley");
     }
 
     // Create a video player for the provided file
-    public VideoPlayer(StackPane root, Scene scene, String fileName) {
+    public VideoPlayer(Scene scene, String fileName) {
 
-        player = new MediaPlayer( new Media(getClass().getResource(fileName).toExternalForm()));
+        borderPane = new BorderPane();
+        player = new MediaPlayer( new Media(getClass().getResource(fileName+".mp4").toExternalForm()));
         mediaView = new MediaView(player);
-
-        root.getChildren().add(mediaView);
-
-        VideoControl controls = new VideoControl(player, mediaView);
-        scene.setRoot(controls);
-
-        player.play();
 
         setVideoPath(fileName);
 
+        // Places media player into a new plan
+        Pane mvPane = new Pane();
+        mvPane.getChildren().add(mediaView);
+        mvPane.setStyle("-fx-background-color: black;");
+        borderPane.setCenter(mvPane);
+
+        // Adds the controls to the video player
+        VideoControl controls = new VideoControl(player, mediaView, borderPane);
+
+        // Preserves aspect ratio while resizing the window
+        mediaView.fitWidthProperty().bind(borderPane.widthProperty());
+        mediaView.fitHeightProperty().bind(borderPane.heightProperty());
+
+
+        playVideo();
+
+    }
+
+    public BorderPane getPane() {
+        return borderPane;
     }
 
     public void setVideoPath(String fileName) {
         this.fileName = fileName;
+    }
+
+    public void stopVideo () {
+        player.stop();
+    }
+
+    public void playVideo () {
+        player.play();
+    }
+
+    public void pauseVideo () {
+        player.pause();
     }
 
 }
