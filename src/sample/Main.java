@@ -15,12 +15,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Video player example");
 
         StackPane root = new StackPane();
         Scene scene = new Scene(root, 1024, 768);
 
-        VideoPlayer video = new VideoPlayer(root, scene);
+        VideoPlayer video = new VideoPlayer(root, scene, "RickAstley.mp4");
 
         primaryStage.setScene(scene);
         primaryStage.show();
