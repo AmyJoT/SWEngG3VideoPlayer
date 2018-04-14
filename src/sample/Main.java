@@ -22,7 +22,7 @@ public class Main extends Application {
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root, 1000, 768);
 
-        VideoPlayer video = new VideoPlayer(scene, "BroomClap");
+        VideoPlayer video = new VideoPlayer(scene);
         //VideoPlayer video = new VideoPlayer(scene);
 
         root.setCenter(video.getPane());
