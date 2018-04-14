@@ -17,6 +17,8 @@ import javafx.scene.control.Button;
 
 import java.time.Duration;
 
+
+// Largely derived from Oracle's Controlling Media Playback: https://docs.oracle.com/javafx/2/media/playercontrol.htm
 public class VideoControl {
     private MediaPlayer mp;
     private MediaView mediaView;
@@ -29,7 +31,7 @@ public class VideoControl {
     private Slider volumeSlider;
     private HBox mediaBar;
 
-    public VideoControl(final MediaPlayer mp, final MediaView mediaView, BorderPane root) {
+    public VideoControl(final MediaPlayer mp, final MediaView mediaView, VBox root) {
         this.mp = mp;
         root.setStyle("-fx-background-color: #bfc2c7;");
         this.mediaView = mediaView;
@@ -43,11 +45,12 @@ public class VideoControl {
         mediaBar = new HBox();
         mediaBar.setAlignment(Pos.CENTER);
         mediaBar.setPadding(new Insets(5, 10, 5, 10));
-        root.setAlignment(mediaBar, Pos.CENTER);
+        //root.setAlignment(mediaBar, Pos.CENTER);
+
 
         final Button playButton  = new Button(">");
         mediaBar.getChildren().add(playButton);
-        root.setBottom(mediaBar);
+        root.getChildren().add(mediaBar);
 
         // Add spacer
         Label spacer = new Label("   ");
