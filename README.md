@@ -1,6 +1,6 @@
 SWEng video player library for JavaFX. Uses the mp4 file format. 
 
-#Example usage
+# Example usage
 There is example code on how to use the library in the `Main.java`. 
 
 To use the code, create a `VideoPlayer` object with the constructor below:
@@ -13,4 +13,4 @@ You can call the `getPane()` method to return the video player pane and use it t
 root.setCenter(video.getPane());
 ```
 
-#Methods
+# Methods
