@@ -1,5 +1,8 @@
 SWEng video player library for JavaFX. Uses the mp4 file format. 
 
+# Adding the library
+Place the files (except the main) in the JavaFX project src file.
+
 # Example usage
 There is example code on how to use the library in the `Main.java`. 
 
@@ -24,6 +27,9 @@ And enabling the provided video controls with this method:
 ```java
 video.enableVideoControls();
 ```
+# Example video files
+Some example mp4 files can be found here:
+[Videos link](https://drive.google.com/drive/folders/1seT5mkx0hkaTat670wtL5yoBzKa9GhWv?usp=sharing)
 
 # Creating your own video controller
 The VideoPlayer class contains methods which return the Media, MediaPlayer, and MediaView objects. The provided VideoController takes the MediaView, MediaPlayer, and the parent pane (in this case a VBox) of the VideoPlayer; these objects are required to program the video player listeners and, for example, add buttons below the video player. 
