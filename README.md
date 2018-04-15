@@ -1,7 +1,7 @@
 SWEng video player library for JavaFX. Uses the mp4 file format. 
 
 # Adding the library
-Place the files (except the main) in the JavaFX project src file.
+Place the files contained in the src directory (except the main) in your JavaFX project src directory.
 
 # Example usage
 There is example code on how to use the library in the `Main.java`. 
