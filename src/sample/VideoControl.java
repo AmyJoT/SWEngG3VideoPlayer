@@ -20,16 +20,23 @@ import java.time.Duration;
 
 // Largely derived from Oracle's Controlling Media Playback: https://docs.oracle.com/javafx/2/media/playercontrol.htm
 public class VideoControl {
-    private MediaPlayer mp;
-    private MediaView mediaView;
-    private final boolean repeat = false;
-    private boolean stopRequested = false;
-    private boolean atEndOfMedia = false;
-    private javafx.util.Duration duration;
-    private Slider timeSlider;
-    private Label playTime;
-    private Slider volumeSlider;
-    private HBox mediaBar;
+    protected MediaPlayer mp;
+    protected MediaView mediaView;
+    protected final boolean repeat = false;
+    protected boolean stopRequested = false;
+    protected boolean atEndOfMedia = false;
+    protected javafx.util.Duration duration;
+    protected Slider timeSlider;
+    protected Label playTime;
+    protected Slider volumeSlider;
+    protected HBox mediaBar;
+
+    /**
+     * Empty constructor for convenience when extending VideoControl class
+     */
+    protected VideoControl() {
+
+    }
 
     public VideoControl(final MediaPlayer mp, final MediaView mediaView, VBox root) {
         this.mp = mp;
@@ -189,7 +196,7 @@ public class VideoControl {
         }
     }
 
-    private static String formatTime(javafx.util.Duration elapsed, javafx.util.Duration duration) {
+    protected static String formatTime(javafx.util.Duration elapsed, javafx.util.Duration duration) {
         int intElapsed = (int)Math.floor(elapsed.toSeconds());
         int elapsedHours = intElapsed / (60 * 60);
         if (elapsedHours > 0) {

@@ -25,6 +25,9 @@ public class Main extends Application {
         //VideoPlayer video = new VideoPlayer(scene, "BroomClap");
         //VideoPlayer video = new VideoPlayer(scene, "Shrek", "<video directory>");
 
+        // Enable the provided evideo controls for the video player
+        video.enableVideoControls();
+
         root.setCenter(video.getPane());
 
 
