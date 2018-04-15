@@ -35,18 +35,10 @@ public class VideoControl {
         this.mp = mp;
         root.setStyle("-fx-background-color: #bfc2c7;");
         this.mediaView = mediaView;
-//        Pane mvPane = new Pane() {                };
-//        mvPane.getChildren().add(mediaView);
-//        mvPane.setStyle("-fx-background-color: black;");
-//        setCenter(mvPane);
-//
-//        root.getChildren().add(mediaView);
 
         mediaBar = new HBox();
         mediaBar.setAlignment(Pos.CENTER);
         mediaBar.setPadding(new Insets(5, 10, 5, 10));
-        //root.setAlignment(mediaBar, Pos.CENTER);
-
 
         final Button playButton  = new Button(">");
         mediaBar.getChildren().add(playButton);

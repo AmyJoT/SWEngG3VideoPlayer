@@ -16,21 +16,21 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Video player example");
 
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root, 1000, 768);
 
         VideoPlayer video = new VideoPlayer(scene);
-        //VideoPlayer video = new VideoPlayer(scene);
+        //VideoPlayer video = new VideoPlayer(scene, "BroomClap");
+        //VideoPlayer video = new VideoPlayer(scene, "Shrek", "<video directory>");
 
         root.setCenter(video.getPane());
 
 
-        // 5 pixels space between child nodes
+        // GUI test elements
         VBox test = new VBox(5);
-        // 1 pixel padding between child nodes only
+
         test.setPadding(new Insets(1));
         Rectangle r1 = new Rectangle(10, 10);
         Rectangle r2 = new Rectangle(20, 100);
