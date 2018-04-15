@@ -26,7 +26,7 @@ video.enableVideoControls();
 ```
 
 # Creating your own video controller
-The VideoPlayer class contains methods which return the Media, MediaPlayer, and MediaView objects. The provided VideoController takes the MediaView, MediaPlayer, and the parent pane (in this case a VBox) of the VideoPlayer; these objects are required to program the video player listeners and, for example, buttons below the video player. 
+The VideoPlayer class contains methods which return the Media, MediaPlayer, and MediaView objects. The provided VideoController takes the MediaView, MediaPlayer, and the parent pane (in this case a VBox) of the VideoPlayer; these objects are required to program the video player listeners and, for example, add buttons below the video player. 
 
 I'd recommend extending the VideoController class or creating your own class that take the objects above.
 
